@@ -66,12 +66,9 @@ class DateNightTest < Minitest::Test
     assert_equal "Hannibal Buress: Animal Furnace", tree.root_node.left.right.title
   end
 
-  def test_include_one_single_item_returns_root
+  def test_include_one_single_item_returns_only_root
     tree = BinarySearchTree.new
     tree.insert(61, "Bill & Ted's Excellent Adventure")
-    tree.insert(16, "Johnny English")
-    tree.insert(92, "Sharknado 3")
-    tree.insert(50, "Hannibal Buress: Animal Furnace")
     assert_equal true, tree.include?(61)
   end
 
@@ -82,6 +79,23 @@ class DateNightTest < Minitest::Test
     tree.insert(92, "Sharknado 3")
     tree.insert(50, "Hannibal Buress: Animal Furnace")
     assert_equal true, tree.include?(50)
+  end
+
+  def test_include_false_returns_false
+    tree = BinarySearchTree.new
+    tree.insert(61, "Bill & Ted's Excellent Adventure")
+    assert_equal true, tree.include?(61)
+    refute tree.include?(14), "this should return false"
+  end
+
+  def test_include_false_returns_false_with_many_items
+    tree = BinarySearchTree.new
+    tree.insert(61, "Bill & Ted's Excellent Adventure")
+    tree.insert(16, "Johnny English")
+    tree.insert(92, "Sharknado 3")
+    tree.insert(50, "Hannibal Buress: Animal Furnace")
+    assert_equal true, tree.include?(61)
+    refute tree.include?(14), "this should return false"
   end
 
 end

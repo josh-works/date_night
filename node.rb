@@ -1,4 +1,4 @@
-
+require 'pry'
 
 class Node
   attr_reader :score, :title
@@ -25,10 +25,11 @@ class Node
 
   def include?(score)
     return true if @score == score
-    if score > @score
+    if score > @score && @right
       @right.include?(score)
-    elsif score < @score
+    elsif score < @score && @left
       @left.include?(score)
+    else return false
     end
   end
 end
