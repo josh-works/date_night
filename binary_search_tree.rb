@@ -23,7 +23,7 @@ class BinarySearchTree
 
 # most of this in node class
   def include?(score)
-    if @root_node.score?
+    if @root_node.score == score
       true
     else @root_node.include?(score)
     end
