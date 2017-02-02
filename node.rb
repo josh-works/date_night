@@ -24,6 +24,7 @@ class Node
   end
 
   def include?(score)
+    return true if @score == score
     if score > @score
       @right.include?(score)
     elsif score < @score

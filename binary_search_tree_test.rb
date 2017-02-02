@@ -16,21 +16,21 @@ class DateNightTest < Minitest::Test
     tree.insert(50, "movie")
     assert tree.root_node
     assert_equal 50, tree.root_node.score
-    assert_equal "movie", tree.root_node.title
+    assert_equal tree.root_node.title, "movie"
   end
 
   def test_insert_root_node_has_right_node
     tree = BinarySearchTree.new
     tree.insert(50, "movie")
     tree.insert(60, "larger")
-    assert_equal "larger", tree.root_node.right.title
+    assert_equal tree.root_node.right.title, "larger"
   end
 
   def test_insert_root_node_has_left_node
     tree = BinarySearchTree.new
     tree.insert(50, "movie")
     tree.insert(40, "smaller")
-    assert_equal "smaller", tree.root_node.left.title
+    assert_equal tree.root_node.left.title, "smaller"
   end
 
   def test_insert_root_node_has_left_and_right_nodes
@@ -38,8 +38,8 @@ class DateNightTest < Minitest::Test
     tree.insert(50, "movie")
     tree.insert(40, "smaller")
     tree.insert(60, "larger")
-    assert_equal "smaller", tree.root_node.left.title
-    assert_equal "larger", tree.root_node.right.title
+    assert_equal tree.root_node.left.title, "smaller"
+    assert_equal tree.root_node.right.title, "larger"
   end
 
   def test_left_node_has_right_node
@@ -51,8 +51,8 @@ class DateNightTest < Minitest::Test
     tree.insert(35, "root-left-left")
     tree.insert(46, "root-right-right")
     tree.insert(36, "root-left-left-right")
-    assert_equal tree.root_node.title, "root"
-    assert_equal tree.root_node.left.right.title, "root-left-right"
+    assert_equal "root", tree.root_node.title
+    assert_equal "root-left-right", tree.root_node.left.right.title
   end
 
   def test_from_project_specs
@@ -61,9 +61,9 @@ class DateNightTest < Minitest::Test
     tree.insert(16, "Johnny English")
     tree.insert(92, "Sharknado 3")
     tree.insert(50, "Hannibal Buress: Animal Furnace")
-    assert_equal tree.root_node.title, "Bill & Ted's Excellent Adventure"
-    assert_equal tree.root_node.left.title, "Johnny English"
-    assert_equal tree.root_node.left.right.title, "Hannibal Buress: Animal Furnace"
+    assert_equal "Bill & Ted's Excellent Adventure", tree.root_node.title
+    assert_equal "Johnny English", tree.root_node.left.title
+    assert_equal "Hannibal Buress: Animal Furnace", tree.root_node.left.right.title
   end
 
   def test_include_one_single_item_returns_root
@@ -72,7 +72,7 @@ class DateNightTest < Minitest::Test
     tree.insert(16, "Johnny English")
     tree.insert(92, "Sharknado 3")
     tree.insert(50, "Hannibal Buress: Animal Furnace")
-    assert_equal tree.include?(61), true
+    assert_equal true, tree.include?(61)
   end
 
   def test_include_many_items
