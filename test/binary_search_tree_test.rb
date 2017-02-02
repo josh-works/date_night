@@ -1,8 +1,8 @@
 require 'pry'
 gem 'minitest'
 require 'minitest/autorun'
-require_relative 'binary_search_tree'
-require_relative 'node'
+require_relative '../lib/binary_search_tree'
+require_relative '../lib/node'
 
 
 class DateNightTest < Minitest::Test

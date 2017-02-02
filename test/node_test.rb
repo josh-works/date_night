@@ -1,7 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
-require_relative 'binary_search_tree'
-require_relative 'node'
+require_relative '../lib/binary_search_tree'
+require_relative '../lib/node'
 
 class NodeTest < Minitest::Test
   def test_can_create_object
@@ -25,6 +25,6 @@ class NodeTest < Minitest::Test
     assert_equal node1.left, node3
   end
 
-  
+
 
 end
