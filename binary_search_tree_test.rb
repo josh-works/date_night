@@ -98,4 +98,22 @@ class DateNightTest < Minitest::Test
     refute tree.include?(14), "this should return false"
   end
 
+  def test_root_node_has_depth_of_0
+    tree = BinarySearchTree.new
+    tree.insert(61, "Bill & Ted's Excellent Adventure")
+    tree.insert(16, "Johnny English")
+    tree.insert(92, "Sharknado 3")
+    tree.insert(50, "Hannibal Buress: Animal Furnace")
+    assert_equal 0, tree.depth_of(61)
+  end
+
+  def test_non_root_node_has_depth_of_1
+    tree = BinarySearchTree.new
+    tree.insert(61, "Bill & Ted's Excellent Adventure")
+    tree.insert(16, "Johnny English")
+    tree.insert(92, "Sharknado 3")
+    tree.insert(50, "Hannibal Buress: Animal Furnace")
+    assert_equal 1, tree.depth_of(92)
+  end
+
 end

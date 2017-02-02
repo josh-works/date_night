@@ -32,4 +32,11 @@ class Node
     else return false
     end
   end
+
+  # def depth_of(incoming_score, depth)
+  #   puts incoming_score, depth
+  # end
+
+
+
 end
