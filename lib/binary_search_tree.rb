@@ -34,4 +34,3 @@ class BinarySearchTree
     # @root_node.depth_of(incoming_score, depth)
   end
 end
-# https://github.com/turingschool/ruby-submissions/tree/master/1608-b/1module/date_night
