@@ -36,7 +36,4 @@ class Node
   # def depth_of(incoming_score, depth)
   #   puts incoming_score, depth
   # end
-
-
-
 end

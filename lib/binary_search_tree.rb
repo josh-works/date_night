@@ -1,7 +1,6 @@
 require 'pry'
 require_relative 'node'
 
-
 class BinarySearchTree
   attr_reader :root_node
   def initialize
@@ -21,7 +20,7 @@ class BinarySearchTree
     end
   end
 
-# most of this in node class
+  # most of this in node class
   def include?(score)
     if @root_node.score == score
       true
@@ -30,15 +29,10 @@ class BinarySearchTree
   end
 
   def depth_of(incoming_score, depth = 0)
-    if @score == incoming_score
-      depth
-    end
+    depth if @score == incoming_score
     # else
-      # depth += 1
-      # @root_node.depth_of(incoming_score, depth)
-
+    # depth += 1
+    # @root_node.depth_of(incoming_score, depth)
   end
-
-
 end
 # https://github.com/turingschool/ruby-submissions/tree/master/1608-b/1module/date_night
